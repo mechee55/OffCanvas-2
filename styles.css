@@ -1,0 +1,77 @@
+:root {
+  --main-container-color: rgba(240, 128, 128, 0.342);
+  --offCanvas-color: rgb(240, 128, 128);
+}
+
+body {
+  background-color: var(--main-container-color);
+}
+
+h1 {
+  font-size: 4em;
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 70px;
+  margin-bottom: 25px;
+}
+
+p {
+  font-family: 'Annie Use Your Telescope', cursive;
+  font-size: 1.7em;
+}
+
+.main-container {
+  padding: 50px;
+  transition-duration: 0.5s;
+}
+
+.menu-button {
+  width: 70px;
+  height: 70px;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.menu-button:focus {
+  outline: none;
+}
+
+.lines {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.line {
+  border: 3px solid black;
+  border-radius: 3px;
+  width: 35px;
+}
+
+/* off-canvas */
+
+.offCanvas {
+  background-color: yellow;
+  width: 550px;
+  height: 100%;
+  top: 0;
+  left: -550px;
+  position: fixed;
+  transition-duration: 0.5s;
+}
+
+.offCanvas img {
+  width: 100%;
+  height: 100%;
+}
+
+/* when the icon is clicked and the offCanvas is open 
+/* this class "offCanvas-is-open" is added to both main-container and offCanvas via javascript  */
+
+.offCanvas-is-open .offCanvas,
+.offCanvas-is-open .main-container {
+  transform: translateX(550px);
+  transition-duration: 0.5s;
+}
